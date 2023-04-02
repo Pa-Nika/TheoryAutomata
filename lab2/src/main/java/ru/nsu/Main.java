@@ -23,20 +23,6 @@ public class Main {
         return str;
     }
 
-    public static void readStringForRec() {
-        System.out.println("\n Enter a string for character recognition: {" + alphabet + " }");
-        while (true) {
-            str = scanIn.nextLine();
-            String newStr = str.replaceAll("["+alphabet+"]", "");
-            if (newStr.length() > 0) {
-                System.out.println("Invalid character used, try again");
-            } else {
-                break;
-            }
-        }
-        System.out.println("\nThe process of recognition:");
-    }
-
     public static void main(String[] args) {
         String str = readRegExpr();
         List<Word> wordList = Tokenizer.parse(str);
@@ -48,12 +34,5 @@ public class Main {
         for (Character c: nfa.getAlphabet() ) {
             alphabet.append(" ").append(c);
         }
-//        readStringForRec();
-//        boolean finish = AnalysOfSyntax.analyseSyntax(nfa, str);
-//        if (!finish) {
-//            System.out.println("The chain was not recognized");
-//        } else {
-//            System.out.println("The chain is recognized");
-//        }
     }
 }
