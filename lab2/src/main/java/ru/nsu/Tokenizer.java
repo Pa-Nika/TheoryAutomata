@@ -59,7 +59,7 @@ public class Tokenizer {
                         } else if (stack.peek() == '&') {
                             Word w1 = internalVar.remove(internalVar.size() - 1);
                             Word w2 = internalVar.remove(internalVar.size() - 1);
-                            internalVar.add(new ConcatStr(w2,w1));
+                            internalVar.add(new ConcatStr(w1,w2));
                             stack.pop();
                             stack.pop();
                         } else if(stack.peek() == '|') {
